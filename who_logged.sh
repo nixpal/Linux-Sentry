@@ -16,7 +16,7 @@ fi
 
 
 
-ip=216.15.129.88
+ip=111.111.111.111
 user=`sudo cat /var/log/auth.log|grep 'Accepted'|awk '{print $9}'`
 logged_date=`sudo cat /var/log/auth.log|grep 'Accepted'|awk '{print $1,$2,$3}'`
 
