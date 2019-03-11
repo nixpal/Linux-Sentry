@@ -3,7 +3,7 @@
 
 for i in $( cat Devips.txt ); do 
 
-ssh serveradm@"$i" 'bash -s' < who_logged.sh > out.txt
+ssh admin@"$i" 'bash -s' < who_logged.sh > out.txt # change the user from admin to the name of your user
 
 servername=`cat out.txt|grep -i 'Hostname'|awk -F: '{print $2}'`
 cpu=`cat out.txt|grep -i 'high cpu usage'`
@@ -16,7 +16,7 @@ then
 	cat out.txt
 	echo IP traced back to :
         echo [+]--------------------------------------------------------------------------------------------[+]
-        geoiplookup -f /usr/share/GeoIP/location/GeoLiteCity.dat "$result"
+        geoiplookup "$result"
         echo [+]--------------------------------------------------------------------------------------------[+]
 
 elif [ ! -z "$portresult" ]
@@ -28,7 +28,7 @@ then
 	cat out.txt
 	echo IP traced back to :
 	echo [+]--------------------------------------------------------------------------------------------[+]
-	geoiplookup -f /usr/share/GeoIP/location/GeoLiteCity.dat "$result"
+	geoiplookup "$result"
 	echo [+]--------------------------------------------------------------------------------------------[+]
 
 elif [ ! -z "$cpu" ]
