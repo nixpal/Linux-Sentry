@@ -19,9 +19,9 @@ port = 25
 context = ssl.create_default_context()
 
 message = MIMEMultipart("alternative")
-message["To"] = "tarek@cybercon.net"
-sender_email = "csdevmon@cybercon.com"
-message["From"] = "csdevmon@cybercon.com"
+message["To"] = "myemail@domain.com"
+sender_email = "servmon@domain.com"
+message["From"] = "servmon@domain.com"
 message["Subject"] = "CSDev Monitor Alert"
 
 
