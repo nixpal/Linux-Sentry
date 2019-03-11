@@ -15,7 +15,7 @@ import imaplib
 smtp_server = "smtp.gmail.com"
 
 
-port = 25
+port = 587
 context = ssl.create_default_context()
 
 message = MIMEMultipart("alternative")
