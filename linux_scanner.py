@@ -13,9 +13,10 @@ from time import sleep
 import imaplib
 
 smtp_server = "smtp.gmail.com"
+gmail_user = 'myusername@gmail.com'
+gmail_pass = 'mypassword'
 
-
-port = 587
+port = 465
 context = ssl.create_default_context()
 
 message = MIMEMultipart("alternative")
@@ -44,8 +45,10 @@ while True:
         msgpart = MIMEText(msg, "plain")
 
         message.attach(msgpart)
-        server = smtplib.SMTP(smtp_server, port)
-        server.starttls()
+        server = smtplib.SMTP_SSL(smtp_server, 465)
+        server.ehlo()
+        server.login(user, password)
         server.sendmail(sender_email, "myemail@domain.com", message.as_string())
+        server.close()
         print "[-] Sent "
         sleep(40)
