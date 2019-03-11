@@ -12,6 +12,7 @@ This Script will do the following functions:
 ## Pre-Run instructions:
 
 1- Create SSH keys to your linux box and try to login via SSH without any passwords.
+
 2- Install geoip by using one of these commands :
 
 ### To install it on Arch Linux and its derivatives, run:
