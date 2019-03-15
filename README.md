@@ -26,7 +26,7 @@ sudo zypper install geoip
 
 
 
-3- Copy the file GeoIP.dat from the Repo to /usr/share/GeoIP/GeoIP.dat. In my case I have this file on macOS in this destinaton /usr/local/var/GeoIP/GeoIP.dat
+3- Copy the file GeoIP.dat from the Repo to /usr/share/GeoIP/GeoIP.dat on the monitoring box. In my case I have this file on macOS in this destinaton /usr/local/var/GeoIP/GeoIP.dat
 You will probably find one file there already, but it's empty one and doesn't have any data.
 ### usage: 
 geoiplookup 8.8.8.8
@@ -34,7 +34,7 @@ You should get an output like this one:
 $geoiplookup 8.8.8.8                                            
 GeoIP Country Edition: US, United States
 
-4- Let's edit your sudoers file to accept some commands through SSH without using sudo.
+4- Let's edit your sudoers file on your server that you want to monitor to accept some commands through SSH without using sudo.
 * $ sudo visudo
 add the following line based on your linux user.
 * testUser ALL=NOPASSWD:/sbin/netstat, /bin/cat
