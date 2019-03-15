@@ -35,9 +35,10 @@ $geoiplookup 8.8.8.8
 GeoIP Country Edition: US, United States
 
 4- Let's edit your sudoers file on your server that you want to monitor to accept some commands through SSH without using sudo.
-* $ sudo visudo
-add the following line based on your linux user.
-* testUser ALL=NOPASSWD:/sbin/netstat, /bin/cat
+* $ sudo visudo\
+Then add the following line based on your linux user.
+* testUser ALL=NOPASSWD:/sbin/netstat, /bin/cat\
+Note: change testUser to your linux user on the machine you want to monitor
 
 Your netstat could be in different location, check the location with the command "which netstat"
 
