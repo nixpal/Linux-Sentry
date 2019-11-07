@@ -1,4 +1,4 @@
-# Linux Server Sentry
+# Linux Sentry
 This Script will do the following functions:
 
 * Monitor target for suspicious login except the IP you provide in the script (we will get to this part later)
